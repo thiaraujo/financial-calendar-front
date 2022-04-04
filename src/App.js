@@ -2,9 +2,10 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Home from './home/home';
-import Sign from './sign-up/sign-up'
+import SignIn from './authentication/login';
 import Welcome from './admin/home/welcome';
-import Invoices from './admin/home/invoices';
+import Invoices from './admin/bills/invoices';
+import CreateOrganization from './admin/organization/organization';
 
 function App() {
   return (
@@ -22,9 +23,10 @@ function App() {
               <BrowserRouter>
                 <Routes>
                   <Route path="/" element={<Home />}></Route>
-                  <Route path="/signup" element={<Sign />}></Route>
+                  <Route path="/signup" element={<SignIn />}></Route>
                   <Route path="/admin/welcome" element={<Welcome />}></Route>
                   <Route path="/admin/invoices" element={<Invoices />}></Route>
+                  <Route path="/admin/organization" element={<CreateOrganization />}></Route>
                 </Routes>
               </BrowserRouter>
           </div>

@@ -1,8 +1,8 @@
 import React from "react";
 
-import SignUp from "./components/create-account-component";
+import SignUp from "./components/home-base";
 
-import Lottie from "../components/home-money-saving";
+import Lottie from "../_lotties/money-lottie";
 import './style/home-style.css';
 
 function Home() {

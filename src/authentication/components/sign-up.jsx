@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"
+import { instance } from "../../_config/constants"
 
 function NewAccount(){
 
@@ -28,7 +29,7 @@ function NewAccount(){
             Password: password
         }
 
-        fetch("https://localhost:7087/v1/authentication", {
+        fetch(`${instance()}/authentication`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify(user)
@@ -57,7 +58,7 @@ function NewAccount(){
     }
 
     function redirectUser(){
-        navigate('/admin/welcome');
+        navigate('/admin/organization');
     }
 
     return (

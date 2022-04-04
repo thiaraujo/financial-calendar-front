@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import Form from "./components/form-money-component";
-import ListInvoices from "./components/invoices-list-component";
+import Form from "../bills/components/create-bill";
+import ListInvoices from "../bills/components/bills-list";
 
 function Invoices() {
  
