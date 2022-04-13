@@ -1,9 +1,9 @@
 import React from "react";
 
-import NewAccount from "./components/sign-up-component";
-import './style/sign-up-style.css'
+import NewAccount from "./components/sign-up";
+import './style/sign-up.css'
 
-function Sign(){
+function Login(){
 
     return (
         <div className="lt-container mt-5">
@@ -18,4 +18,4 @@ function Sign(){
 
 }
 
-export default Sign;
+export default Login;

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { instance } from "../../_config/constants"
 
 function SignUp(){
     const [email, setEmail] = useState('');
@@ -8,7 +9,7 @@ function SignUp(){
     const onSubmitHandler = event => {
         event.preventDefault();
 
-        fetch(`https://localhost:7087/v1/account/email/${email}`)
+        fetch(`${instance()}/account/email/${email}`)
         .then(response => response.json())
         .then(dados => {
             if(dados === null){

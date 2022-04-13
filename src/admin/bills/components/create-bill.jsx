@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import '../style/form-money-style.css';
+import '../style/bill-form-money.css';
 
-function Form(props){
+function FormMoney(props){
     
     const incomeType = [
         {
@@ -97,4 +97,4 @@ function Form(props){
     )
 }
 
-export default Form;
+export default FormMoney;
