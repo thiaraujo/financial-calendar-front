@@ -15,22 +15,23 @@ function FormOrganization(){
         }
     ];
     
-    const [organizationType, setOrganizationType] = useState('');
-    const [path, setPath] = useState('');
+    const [organizationType, setOrganizationType] = useState(1  );
+    const [name, setPath] = useState('');
     const [description, setDescription] = useState('');
 
     const organization = {
         Identification: {
-            Path: path,
+            Path: name,
             Description: description
         },
-        OrganizationType: organizationType
+        OrganizationType: organizationType,
+        Image: ""
     }
-
+     
     const onSubmitHandler = event =>{
         event.preventDefault();
-
-        if(organization.Description === null || organization.value === null){
+        
+        if(organization.Description === null || organization.OrganizationType < 1){
             alert("You must fill all fields to continue.");
             return;
         }
@@ -47,6 +48,7 @@ function FormOrganization(){
                 }
                 else
                 {
+                    console.log(data);
                     alert("Your organization has been created successfully!")
 
                     // Save data
@@ -59,7 +61,7 @@ function FormOrganization(){
     }
 
     function redirectUser(){
-        navigate('/welcome');
+        navigate('/admin/welcome');
     }
 
     return (
@@ -87,7 +89,7 @@ function FormOrganization(){
                                     name="type"
                                     value={types[1].value} 
                                     id={types[1].text}
-                                    onChange={event => setOrganizationType(event.target.value)}/>
+                                    disabled={true}/>
                                 <label htmlFor={types[1].text} 
                                        className="form-check-label ml-3">
                                     {types[1].text}
@@ -100,7 +102,7 @@ function FormOrganization(){
                                 <input type="text" 
                                     className="form-control"
                                     placeholder="eg: personal-bills"
-                                    value={path} 
+                                    value={name} 
                                     onChange={event => setPath(event.target.value)}
                                     required />
                             </div>
